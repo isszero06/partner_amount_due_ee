@@ -51,14 +51,11 @@
         </field>
     </record>
         <record id="due_account_payment_form" model="ir.ui.view">
-            <field name="name">branch.account.payment.form</field>
+            <field name="name">due.account.payment.form</field>
             <field name="model">account.payment</field>
             <field name="inherit_id" ref="account.view_account_payment_form"/>
             <field name="arch" type="xml"> 
                 <xpath expr="//field[@name='partner_id']" position="after">
-                <attribute name="domain">['|',('company_id','=',company_id),('company_id','=',False),'|',('branch_ids', '=', branch_id),('branch_ids', '=', False)]</attribute>
-                </xpath> 
-                <xpath expr="//field[@name='is_internal_transfer']" position="after">
                     <field name="partner_amount_due" string="Amount Due" groups="partner_amount_due_ee.group_customer_due"/>
                     <field name="partner_total_overdue" string="Amount Over Due" groups="partner_amount_due_ee.group_customer_due"/>
                 </xpath>
