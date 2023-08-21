@@ -31,3 +31,12 @@ class AccountMove(models.Model):
         related='partner_id.total_due',readonly=True)
     partner_total_overdue = fields.Monetary(string="Amount Over Due",
         related='partner_id.total_overdue',readonly=True)
+
+class AccountPayment(models.Model):
+    _inherit = "account.payment"
+
+
+    partner_amount_due = fields.Monetary(string="Amount Due",
+        related='partner_id.total_due',readonly=True)
+    partner_total_overdue = fields.Monetary(string="Amount Over Due",
+        related='partner_id.total_overdue',readonly=True)
