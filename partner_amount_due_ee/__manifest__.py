@@ -12,7 +12,7 @@
     'summary': """Show Customer Amount Due and Amount Over Due""",
 
     'description': """
-            Show Customer Amount Due and Amount Over Due on sales Order, Invoice, Credit Note """,
+            Show Customer Amount Due and Amount Over Due in sale Order, Invoice, Credit Note and payments""",
     'depends': [
         'base','sale_management','account_followup'
     ],
