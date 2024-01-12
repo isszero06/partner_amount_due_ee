@@ -8,8 +8,8 @@
     <field name="active" eval="True"/>
     <field name="arch" type="xml">
       <xpath expr="//field[@name='partner_shipping_id']" position="after">
-          <field name="partner_amount_due" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}" string="Amount Due" groups="partner_amount_due_ee.group_customer_due"/>
-          <field name="partner_total_overdue" attrs="{'invisible': [('move_type', 'not in', ('out_invoice', 'out_refund', 'out_receipt'))]}" string="Amount Over Due" groups="partner_amount_due_ee.group_customer_due"/>
+          <field name="partner_amount_due" invisible ="move_type not in ('out_invoice' , 'out_refund' , 'out_receipt')" string="Amount Due" groups="partner_amount_due_ee.group_customer_due"/>
+          <field name="partner_total_overdue" invisible ="move_type not in ('out_invoice' , 'out_refund' , 'out_receipt')" string="Amount Over Due" groups="partner_amount_due_ee.group_customer_due"/>
         </xpath>
     </field>
   </record>
